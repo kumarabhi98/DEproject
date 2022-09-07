@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet">
+    <title>traffic</title>
+</head>
+
+<body>
+    <nav>
+        <h1>DE</h1> <span>project</span>
+    </nav>
+    <section>
+        <div class="options">
+            <h1>Options</h1>
+            <div class="menu" id="option1" onclick="changeoption('option1')">Objective</div>
+            <div class="menu" id="option2" onclick="changeoption('option2')">Theory</div>
+            <div class="menu" id="option4" onclick="changeoption('option4')">About Stimulation</div>
+            <div class="menu" id="option3" onclick="changeoption('option3')">Stimulation</div>
+        </div>
+        <div class="actionarea" id="info">
+            <h1>TRAFFIC LIGHTS CONTROLLER USING D TYPE FLIP-FLOP</h1>
+            <H2>Submitted by:</H2>
+            <p>Abhishek Kumar (2K19/CO/020) <br>
+                Abhishek Kumar Singh (2K19/CO/021) 
+            </p>
+            <H2>Submitted to:</H2>
+            <p>Dr. Rajesh Rohilla
+                <br> Professor, <br> Dept. of ECE, DTU.
+            </p>
+            
+
+           <!-- <h1>ABOUT THE STIMULATION</h1>
+           <p id="steps">
+               1. <span>off</span>  is for 'S' variable. Initially 's' is 1. To make S=0, CLICK ON  <span>off</span>  and to make s=1, CLICK ON  <span>On</span>. <br><br>
+               2. <span id="c">Clock</span> is used to generate the clock pulses. CLICK on it and the circuit will respond to the clock pulse. <br><br>
+               3. Slider present in bottom left corner is used for changing the time period of the clock pulse in running state. <br><br>
+               4. See the changed value of variables after Clicking the clock in the table below. <br><br>
+               5. Click on this for running the circuit<i class="fas fa-power-off" id="v"></i>   
+           </p> -->
+
+
+            <!-- <h1>Solution to problem</h1>
+            <h2>STEP 1: Understand the problem and decide how many states you need.</h2>
+            <img src="state.png" alt="" srcset="">
+            <p>Looking at the transition table, we see that there are six states in the first column (dangerous
+                intersection) and
+                four states in the second. However we do not need ten states because all four states in the second
+                column (the
+                same six outputs) are included in the six states of the first column. We need only six states.</p>
+            <h2>STEP 2: Construct the state transition diagram (ignore outputs)</h2>
+            <img src="statedia.png" alt="" srcset="">
+            <h2>STEP 3: Select the type and number of flip-flops for the circuit.</h2>
+            <p>Since the number of states is equal to six, the minimum number of flip-flops, which can support six
+                states, is
+                three. The maximum number of flip-flops one may use is six (one flip-flop per state). For this design
+                example
+                we will use three D-type flip-flops. There will be two unused states.</p>
+            <h2>STEP 4: Assign state numbers to flip-flop outputs and construct the transition table.</h2>
+            <p>If we want to try to find a simpler overall circuit, we may try different flip-flop assignments for the
+                states. One
+                idea is to minimise the output circuitry. We could, for example, make R1=Q1 and R2=Q2, if these simple
+                assignments will give us a correct complete state assignment. The third output, Q3 has to be assigned
+                such that
+                all used states are distinct. One possible set of assignments are shown below:</p>
+            <img src="stateassign.png" alt="" srcset="">
+            <img src="kmap.png" alt="" srcset="">
+            <p>The output circuits require only two-input NAND gates. But of course, we have to redesign the input
+                circuitry
+                with the new flip-flop assignments.</p>
+            <img src="table.png" alt="" srcset="">
+            <div id="imagetable">
+                <img src="d1.png" alt="" srcset=""><img src="d2.png" alt="" srcset=""><img src="d3.png" alt=""
+                    srcset="">
+            </div>
+            <h3>Final Equations</h3>
+            <div id="flex">
+                <div>
+                    D1 = S'•Q2' + Q3'
+                </div>
+                <div>
+                    D2 = S'•Q1' + Q3
+                </div>
+                <div>
+                    D3 = Q2' + Q1•Q3
+                </div>
+                <div>
+                    R1 = Q1
+                </div>
+                <div>
+                    A1 = Q1'•Q3'
+                </div>
+                <div>
+                    G1 = Q1'•Q3
+                </div>
+                <div>
+                    R2 = Q2
+                </div>
+                <div>
+                    A2 = Q2'•Q3
+                </div>
+                <div>
+                    G2 = Q2'•Q3'
+                </div>
+            </div>
+            <P>
+            </P> -->
+        </div>
+        <div class="actionarea" id="stimulator">
+            <div id="s" onclick="changes()">
+                <h1>off</h1>
+            </div>
+            <div class="power" onclick="start()">
+                <i class="fas fa-power-off"></i>
+            </div>
+            <div class="slider">
+                <div class="range">
+                    <input type="range" id="rng" min="2" max="60" value="0" oninput="slider()">
+                    <span id="value">2</span>
+                </div>
+            </div>
+            <div class="traffic" id="t1">
+                <div class="light" id="r1"></div>
+                <div class="light" id="y1"></div>
+                <div class="light" id="g1"></div>
+            </div>
+            <div class="traffic" id="t2">
+                <div class="light" id="r2"></div>
+                <div class="light" id="y2"></div>
+                <div class="light" id="g2"></div>
+            </div>
+            <img src="circiut.png" alt="" id="circuit">
+            <button id="clock" onclick="clockfun()">Clock</button>
+            <div id="table">
+                <table id="tabledata">
+                    <tr>
+                        <th class="tableheading">S</th>
+                        <th class="tableheading">D1</th>
+                        <th class="tableheading">D2</th>
+                        <th class="tableheading">D3</th>
+                        <th class="tableheading">R1</th>
+                        <th class="tableheading">A1</th>
+                        <th class="tableheading">G1</th>
+                        <th class="tableheading">R2</th>
+                        <th class="tableheading">A2</th>
+                        <th class="tableheading">G2</th>
+                    </tr>
+                </table>
+            </div>
+            <div id="count">
+                <h1>02</h1>
+            </div>
+            <div id="space"></div>
+
+        </div>
+    </section>
+    <script src="fun.js"></script>
+    <script src="navigation.js"></script>
+</body>
+
+</html>
